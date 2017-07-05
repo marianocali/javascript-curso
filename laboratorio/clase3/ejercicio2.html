@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		
+		var alumnos = new Array("Juan","Ana","Diego","Maria","Adrian","Carla","Damian");
+		//var alumnos = new Array("Juan","Ana","Diego","Maria","Adrian","Carla","Damian");
+		//							0     1     2	     3        4        5     6
+		for(var i = 1; i < alumnos.length; i++)
+		{
+			console.log(i);
+			if(i % 2 == 1 || alumnos[i] == "Maria")
+			{
+				console.log(alumnos[i]);
+			}               
+			if(alumnos[i] == "Carlos")
+			{
+				i = 1;
+			}
+		}
+		console.log("Fin del programa");
+
+		//Ana Maria Carla
+
+
+
+	</script>
+
+
+</body>
+</html>

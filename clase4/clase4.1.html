@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		
+		//Las funciones en javascript tienen una definicion y un llamado
+		//la definición nos dice los pasos que va a ejecutar la función.	
+		//tipicamente estan abajo y el codigo arriba. Pero pueden estar en cualquier parte
+
+		//Cuando una función no tiene parametros y va a hacer siempre lo mismo
+		// se llama procedimiento.
+		//Ej imprmir mi nombre
+
+		//No hay sobrecarga en javascript
+		//las funciones no pueden tener el mismo nombre y distintos nro o tipo de 
+		//parametros.
+
+		//Una función no debe modificar el DOM, rebe retornar un valor
+
+		//A menos que nosotros retornemos algo, por defecto toda función en js
+		//va a retornar undefined
+
+		sumar();
+		sumar();
+		document.write( suma(100, 98));
+
+		//esta sin parametros es un procedimiento
+		function sumar(){
+			var valor_a = 10;
+			var valor_b = 4;
+			var total;
+			total = valor_a + valor_b; 
+			document.write(total + "<br>");
+		}
+
+		//esta con parametros es una funcion
+		function suma(a, b){
+			return a + b;
+		}
+
+	</script>
+
+</body>
+</html>

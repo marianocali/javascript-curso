@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		var fecha       = new Date();
+		var dia         = fecha.getDate();
+		var mes         = fecha.getMonth() + 1; // comienza desde cero..
+		var anio        = fecha.getFullYear ();
+		var hora        = fecha.getHours();
+		var minutos     = fecha.getMinutes();
+		var segundos    = fecha.getSeconds()
+
+		document.writeln("hoy es " + dia + " del mes " + mes + " de " + anio);
+		document.writeln("es la hora: " + hora + ":" + minutos + ":"  + segundos);
+
+	</script>
+</body>
+</html>

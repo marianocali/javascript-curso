@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+			
+		//armar un input al vuelo
+		// secrear con document.createElement y se le pasa lo que queremos crear
+		var caja = document.createElement("input");	
+		caja.type = "text";
+		caja.placeholder = "Ej: 20";
+		caja.label = "Ingrese";
+
+		document.body.appendChild(caja); 
+		//cada vez que hacemos appendChild se agrega debajo de la anterior
+
+		var boton = document.createElement("input");
+		boton.type = "button";
+		boton.value = "Mostrar";
+		boton.onclick = mostrar;		
+		document.body.appendChild(boton); 
+
+		var botonCambiarColor = document.createElement("input");
+		botonCambiarColor.type = "button";
+		botonCambiarColor.value = "cambiarColor";
+		botonCambiarColor.onclick = cambiarColor;
+		document.body.appendChild(botonCambiarColor); 		
+
+		var img = document.createElement("img");
+		img.src = "alpes.jpg";
+		img.width = 400;
+
+		function mostrar(){
+			alert(caja.value);
+		}
+
+		function cambiarColor(){
+			document.body.appendChild(img); 
+			document.body.style.backgroundColor = caja.value;	
+			//document.writeln("<br>");					
+		}
+
+	</script>
+
+</body>
+</html>

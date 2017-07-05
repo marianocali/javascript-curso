@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>clase 4.4</title>
+</head>
+<body>
+
+	<form action="https://alumni.educacionit.com" method="post" onsubmit="validar(event)" id="formu1">   
+	<!-- En la direccin de goole va a llegar lo que mandemos de aca como parametro en la url
+		https://www.google.com.ar/?usuario=Juan&clave=123 
+	-->
+
+	<!-- El atributo name es el que le da el nombre a la variable del otro lado en la url 
+	Si nosotros le llamamos clave del otro lado va a llegar clave= y el valor que hayamos ingresado
+-->
+
+<!-- el action nos va a decir a donde vamos a ir -->
+		<!-- el metodo por defecto es get 
+			Existe otro método que es el POST ahí van ocultas
+		El post es mas seguro se puede ver haciendo
+		F12 
+		Network
+		elegimos la primera pagina de destino
+		a la derecha seleccionar HEADERS
+		ir hasta abajo de todo 
+		Form Data
+		ahi aparecen los datos 
+	-->
+	<input type="text" name="usuario" placeholder="ingrese usuario"> <br>
+	<input type="password" name="clave" > <br>
+
+
+	<input type="submit" value="Entrar"> <!-- envia el formulario al lugar a donde lo enviamos  -->
+
+</form>
+
+
+<script type="text/javascript">
+
+	function validar(e){
+		e.preventDefault();
+		if(confirm(" Es valido? ")){
+			var formulario = document.querySelector("#formu1")
+			formulario.submit();
+		}
+	}
+
+</script>
+
+</body>
+</html>

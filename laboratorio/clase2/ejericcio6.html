@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		Programe en JavaScript la solución al siguiente requerimiento:
+
+		Solicite al usuario el ingreso de su nombre.
+		El valor ingresado debe ser validado, de manera que:
+
+		·         No se acepten valores numéricos.
+		·         No se acepte una cadena vacía.
+		·         Además, el nombre “administrador” tampoco será aceptado.
+
+		Una vez ingresado el nombre y perfectamente validado, arroje un mensaje de agradecimiento, con el cual el programa finaliza.
+	</pre>
+
+	<script type="text/javascript">
+		var nombre;
+		var salir = false;
+
+		
+		nombre = prompt("Ingrese su nombre.");
+
+			if(nombre != "Administrador" && isNaN(nombre) && nombre !=""){
+				alert("nombre correcto muchas gracias");
+				salir = true;
+			}
+			else{
+				prompt("nombre incorrecto");
+			} 
+		
+
+	</script>
+</body>
+</html>

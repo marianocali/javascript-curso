@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		
+	var edades = [];  //se podrìa escribir new Array(); en vez de [] es la notacion antigüa
+	edades.push(24);
+	edades.push(50);
+
+	console.log("miarrayes:" , edades);
+
+	document.writeln("el array edades tiene como tamaño: " , edades.length);
+
+
+	var nombres =["lucas", "marcos", "ivan", "Laura", "Ines"];
+
+	for (var i =0 ; i <= 10; i++) {
+		document.writeln("i vale : " + i + "<br>" ); //+ <"br">
+	}
+
+	//primero obtener el length y luego usarlo para no calcularlo n veces
+	var vueltas = nombres.length;
+	for (var i =0 ; i < vueltas ; i++) {
+		if(i ==3){ 
+			continue; //en el caso del 3 salta a la siguiente iteración
+		}
+
+		if(i == 4) { 
+			break;  //corta la ejecución de la iteración
+		}
+		var j = i+1;
+		document.writeln("nombres[" + i +"] = " + j + " _ " +  nombres[i] + "<br>" ); //+ <"br">
+	}
+	
+	document.writeln("<br>");
+	var coordenadas = [[0,0], [1,6],[8,9]];
+	document.writeln("coordenadas[0][0] = " + coordenadas[0][0] + "<br>");
+	document.writeln("coordenadas[1][1] = " + coordenadas[1][1] + "<br>");
+	
+	document.writeln("<br>");
+
+	var tamanio = coordenadas.length;
+	
+	for (var i=0 ; i < tamanio; i++) {
+		//console.log(coordenadas[i]);		
+		// document.writeln(coordenadas[i]);
+		// document.writeln(" i = " + i);
+		tamanio2 = coordenadas[i].length;
+		// document.writeln("tamanio2 = "  + tamanio2 + "<br>");
+		for (j =0; j < tamanio2; j++){
+		 	document.writeln("coordenadas[" + i + "][" + j + "] = " +  [coordenadas[i][j]] + "<br>");		 	
+		}
+	}
+
+
+	</script>
+
+</body>
+</html>

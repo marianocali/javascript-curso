@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 5</title>
+</head>
+<body>
+	<p>Usando el lenguaje JavaScript:
+ 
+	Cambie el color de fondo de la pantalla.
+	Luego, coloque una imagen cualquiera en pantalla.
+ 
+	Al dobleclickear sobre la imagen, deberá informarse (a través de una alerta) cual es el color de fondo actual; al aceptar la ventana de alerta: Cambiar a otro color de fondo a elección.
+</p>
+	<img src="js.jpg" width="200" ondblclick="cambiar_color()";>
+
+	<script type="text/javascript">
+		
+	document.bgColor="tomato";
+
+	function cambiar_color(){
+		alert('color: tomato');		
+		document.bgColor="orange";		
+	}
+
+	</script>
+
+</body>
+</html>

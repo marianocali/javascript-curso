@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		function calcular(valor)
+		{
+			var suma= 0;
+			for(var i = valor; i <= valor*2;i++)
+			{
+				suma = suma + i;
+			}  
+			return suma;
+		}
+		calcular(3);
+
+		Función 2:
+
+		function saludar()
+		{
+			var aQuien = 'Juan';
+			console.log('Buen dia ' + aQuien);
+		}
+		saludar();
+
+		Función 3:
+
+		function promedioNotas(notas,alumno)
+		{
+			var sumaNotas = 0;
+			for(var i = 0; i < notas.length; i++)
+			{
+				sumaNotas = sumaNotas + notas[i];
+			}            
+			var promedio = sumaNotas / notas.length;
+			console.log(alumno +  ': tu promedio es de: '   + promedio);
+		}
+		promedioNotas(new Array(7,2,6,4),'Diego');
+	</script>
+</body>
+</html>

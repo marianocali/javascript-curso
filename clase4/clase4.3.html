@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clase 4.3</title>
+</head>
+<body>
+	
+	<div id= "cajax"></div>
+
+	<input type="text" id="txtNombre" placeholde= "Ingrese su nombre" >
+	<input type="button" id="btnAccion" value= "Accionar" >
+
+
+	<script type="text/javascript">
+
+	//CAPTURA DE NODOS DEL DOM
+	//querySelector me permite elegir un elemento el html. 
+	var boton =  document.querySelector("#btnAccion");	
+
+
+	//DARLE FUNCIONALIDAD AL BOTON
+	boton.onclick = escribirValorDiv;
+
+	function escribirValorDiv(){
+		var entrada = document.querySelector("#txtNombre");
+		var miDiv = document.querySelector("#cajax");
+		miDiv.innerHTML = "Usted ingreso " + entrada.value;
+	}
+
+	//vamos a crear un elemento al vuelo	
+	var boton = document.createElement("input");
+	boton.type = "button";
+	boton.value = "saludar";
+	boton.onclick = miAccion;
+
+	//agregarlo a html
+	document.body.appendChild(boton);
+
+	function miAccion(){
+		alert("Hola");
+	}
+</script>
+
+</body>
+</html>

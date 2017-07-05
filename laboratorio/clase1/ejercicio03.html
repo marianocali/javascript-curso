@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		
+	var x = 10;
+	var y = 20;
+
+	function reiniciar_xy(){
+		x = 10;
+		y = 20;		
+	}
+
+	function imprimir_xy(){
+		document.write("<br>");
+		document.write("x:", x ,"<br>");
+		document.write("y:", y ,"<br>");
+		document.write("<br>");
+	}
+
+	//Test A
+	document.write("Test A");
+	x= x %2;
+	y= y %3;
+	imprimir_xy();
+
+
+	//Test B
+	document.write("Test B");	
+	reiniciar_xy();
+	x = x + 5 % 2;
+	y = y + 4 % 4;
+	imprimir_xy();
+
+	//Test C
+	document.write("Test C");	
+	reiniciar_xy();
+	x = (5 * 4) % x;
+	y = 2*(23 % y);	
+	imprimir_xy();
+
+
+	//Test D
+	document.write("Test D");	
+	reiniciar_xy();
+	x = 8 % x;
+	y = x % 9;
+	imprimir_xy();
+	
+
+	</script>
+
+</body>
+</html>

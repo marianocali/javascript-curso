@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		Ejercicio 2:
+		Cree 2 cajas de texto, y un botón con la leyenda “sumar”.
+
+		En las cajas de texto se ingresarán valores numéricos (enteros, decimales, negativos, o bien ceros).
+		Cuando se presione el botón “sumar”, se deberá informar en pantalla el resultado de dicha suma.
+
+
+		OBSERVACION:
+		Para este ejercicio, NO se requiere validar los datos ingresados por el usuario.
+		Asuma que el usuario ingresará valores numéricos en ambas cajas.
+	</pre>
+	
+
+	<input type="number" id="nro1" name="nro1">
+	<br>
+	<input type="number" id="nro2" name="nro2">
+	<br>
+	<input type="button" name="Sumar" value="sumar" onclick="sumar()">
+	
+
+
+	<script type="text/javascript">
+		
+		function sumar(){
+			var nro1 = document.querySelector("#nro1").value;
+			nro1 = Number(nro1);
+			
+			var nro2 = document.querySelector("#nro2").value;
+			nro2 = Number(nro2);
+
+			var suma = nro1 + nro2;
+			document.writeln("suma:"+ suma);
+		}
+	</script>
+
+</body>
+</html>

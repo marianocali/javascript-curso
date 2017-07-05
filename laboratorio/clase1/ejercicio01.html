@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		
+		var x = 10;
+		var y = 20;
+		x = x + x + 1; 
+		y = y - y - x; 
+
+		document.write("Test A");
+		imprimir();
+
+		console.log("x: ",x);
+		console.log("y: ",y);
+
+
+		function imprimir(){
+			document.write("<br>");
+			document.write("x:", x ,"<br>");
+			document.write("y:", y ,"<br>");
+			document.write("<br>");
+		}
+
+		//
+		// Test B 
+		function reiniciar(){
+			x = 10;
+			y = 20;	
+		}
+		reiniciar();
+		
+		x = (x - y) + 4; 
+		y = 4 + (y + 5);
+		document.write("Test B");
+		imprimir();
+		
+		//Test C
+		reiniciar();
+		x= x*2 -4;  //16
+		y= 4-y*2;  // -36
+		
+		document.write("Test C");
+		imprimir();
+
+		//Test D
+		document.write("Test D");
+		reiniciar();
+		x= (20-x) / y; 	//0.5
+		y= x+ 2/y; 	//.5 + .1 = .6
+		imprimir();
+
+		//Test E
+		document.write("Test E");
+		reiniciar();
+		x = ((1 - x) * (y / 8)) * 4 * 0; // 0
+		y = (x + 3) / x;				 // infinity
+		imprimir();
+
+		
+
+	</script>
+
+</body>
+</html>

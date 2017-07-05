@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<pre>
+		Programar en JavaScript la solución al siguiente problema:
+
+		Solicite al usuario, a través de una ventana de diálogo, el ingreso de un color (rojo, azul o verde) NO se aceptarán otros colores. El usuario debe ingresar el color escribiéndolo en español.
+
+		Se pide:
+
+		A)   Valide el color ingresado, de manera de asegurar que sea un color válido.
+		B)   Una vez perfectamente validado el color, cambie el color de fondo de la página, poniendo el color en cuestión.
+
+
+		RECUERDE:
+
+		Para cambiar el color de fondo de pantalla use: document.bgColor
+		document.bgColor requiere las etiquetas 
+		<!-- <body></body> antes de <script> para funcionar. -->
+
+	</pre>
+
+	<script type="text/javascript">
+		var color = prompt("ingrese un color: rojo, verde o azul");
+		if(esColorValido(color)){
+			// document.bgColor(color);
+			document.body.style.backgroundColor = traducirColor(color);
+		}
+		else{
+			alert("el color ingresado no es uno de los 3: rojo, verder o azul");
+		}
+
+
+		function esColorValido(color){
+			if(color != "rojo" && color != "verde" && color != "azul"){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}	
+
+		function traducirColor(color){
+			switch(color){
+				case "rojo":
+					return "red";
+				case "verde":
+					return "green";
+				case "azul":
+					return "blue";
+			}	
+		}
+
+	</script>
+
+
+</body>
+</html>

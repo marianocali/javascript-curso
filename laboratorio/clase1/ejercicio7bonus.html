@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>
+		Codifique en el lenguaje JavaScript el siguiente pseudo-código:   <br>
+
+		VARIABLES: <br>
+		mensaje: string <br>
+		edad: numérico <br>
+
+		INICIO Programa  <br>
+		IMPRIMIR “Bienvenido” <br>
+		edad ← 35 <br>
+		mensaje ← “El año que viene tendre: “ <br>
+		edad ← edad + 1 <br>
+		IMPRIMIR mensaje + edad + “ años” <br>
+		IMPRIMIR “Fin del programa” <br>
+		FIN Programa <br>	
+	</p>
+	
+	<label> Bienvenido</label> <br>
+	<label>Ingrese su edad:</label> <br>
+	<input type="number" id="edad" name="edad">
+
+	<input type="button" value="ingresar" name="boton" onclick="saludar()">
+	
+
+	<script type="text/javascript">
+		function saludar(){
+
+			var edad = document.querySelector("#edad").value;
+			edad = parseInt(edad) + 1;
+			document.write("El año que viene tendre: ",edad , " años");
+		}
+
+
+	</script>
+
+</body>
+</html>

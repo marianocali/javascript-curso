@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		Dados 2 vectores, con países y con la información sobre si el país es de América o NO:
+
+		Ejemplo:
+
+		var paises = new Array(“Francia”,”Argentina”,”Mexico”,”Inglaterra”,”Senegal”,”Uruguay”);
+		var paisesAmericanos = new Array(false,true,true,false,false,true);
+
+		Cada posición del vector de paisesAmericanos se relaciona directamente con su posición equivalente en el vector de países.
+
+		Se pide:
+		Programar un proceso que imprima en pantalla todos aquellos países que NO son de América.
+
+		AYUDA:
+		El código necesario para resolver el ejercicio es muy corto.
+	</pre>
+		
+	<script type="text/javascript">
+		
+		var paises = new Array("Francia","Argentina","Mexico","Inglaterra","Senegal","Uruguay");
+		var paisesAmericanos = new Array(false,true,true,false,false,true);
+
+		document.writeln("Los países que NO son de América son:" + "<br>");
+			
+		for(i=0; i < paises.length; i++){
+			if(paisesAmericanos[i]==false)
+				{
+					document.writeln(" * "+ paises[i] + "<br>");
+				}
+		}
+
+	</script>
+
+</body>
+</html>

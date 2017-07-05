@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		var desplegable = document.createElement('select');
+		var opciones = new Array("Item 1","Item 2","Item N");
+		
+		for(var i = 0; i < opciones.length; i++)
+		{
+			opcion = document.createElement("option");
+			opcion.innerHTML = opciones[i];
+			desplegable.appendChild(opcion);
+		}
+		
+		document.body.appendChild(desplegable);
+	</script>
+	
+</body>
+</html>

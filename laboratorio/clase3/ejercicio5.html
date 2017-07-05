@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		Dado un vector con valores del tipo numérico y enteros, se pide:
+
+		A)   Calcule el total de la suma de todos los valores impares del vector.
+		B)   Calcule el total de la suma de todos los elementos con índice impar del vector.
+
+		RESTRICCIONES A LA SOLUCION:
+		En ambos casos deberá recorrer el vector.
+	</pre>
+	
+
+
+	<script type="text/javascript">
+		var vector = new Array();
+		var sumaValoresImpares = 0;
+		var sumaIndicesImpares = 0;
+
+		for(i=0; i< 3; i++){
+			//var valor = prompt("Ingrese los valores del vector");
+			vector[i] = Number(prompt("Ingrese los valores del vector"));
+			//vector.add(var.value);
+		}
+
+		for(i=0; i<vector.length; i++){
+			if(i%2 !=0){
+				sumaIndicesImpares += vector[i];
+			}
+			if(vector[i]%2 !=0){
+				sumaValoresImpares += vector[i];
+			}
+		}
+		document.writeln("sumaValoresImpares: " + sumaValoresImpares + "<br>");
+		document.writeln("sumaIndicesImpares: " + sumaIndicesImpares);
+
+	</script>
+</body>
+</html>

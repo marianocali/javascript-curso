@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+
+
+	<script type="text/javascript">
+		
+			//scope o alcance 
+
+	//VARIABLE GLOBAL
+	//cuando escribo var variable, esa variable es global
+	// la puedo usar en todo el código
+	//si creo una variable sin la palabra var.
+	//Ej dni = 36194997; también es global
+
+	//VARIABLE LOCAL
+	//es declarada dentro de una función
+
+	//Si adentro de una función la variable se definió con var es local
+	//Si se definió sin var entonces es global
+
+	//Las variables existen solo en la página, al cargar otra página se limpia todo.
+
+
+	var nombre = "Juan";
+	var nombre2 = "Pepe";
+
+	prueba();
+	document.write("nombre: " + nombre + "<br>");
+	document.write("nombre2:" + nombre2 + "<br>");
+
+	function prueba(){
+		nombre = "cacho";		//este valor va a pisar la variable global nombre
+		var nombre2 = "Tito";	//este valor va a ser local y no va a modificar la variable global nombre2
+	}
+
+</script>
+
+</body>
+</html>

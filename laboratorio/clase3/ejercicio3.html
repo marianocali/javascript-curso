@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 3</title>
+</head>
+<body>
+	
+	<pre>
+		Codificando en JavaScript, cree un vector de 5 elementos:
+		Cada uno de los valores del vector debe ser ingresado por el usuario, mediante el uso de 5 ventanas prompt distintas.
+
+		Una vez cargados los 5 valores: Imprima en pantalla los datos ingresados, 1 por 1.
+
+		RESTRICCIONES A LA SOLUCION:
+		En el código que usted arme, la llamada a la ventana prompt debe ser escrita 1 única vez.
+
+		OBSERVACION:
+		Para este ejercicio, NO se requiere validar los datos ingresados por el usuario.
+	</pre>
+
+	<div id= "cajax"></div>
+
+
+	<script type="text/javascript">
+		
+		var arreglo = new Array();
+		for (i=0; i<3; i++){
+			arreglo[i] = prompt("Ingrese nombre");
+		}
+
+		var miDiv = document.querySelector("#cajax");
+		
+		for (i=0; i<arreglo.length; i++){			
+			//miDiv.innerHTML = arreglo[i] + "<br>"; imprime siempre en el mismo
+			//lugar y pisa los valores previos.
+			document.writeln(arreglo[i] + "<br>");
+		}
+
+
+		//debug
+		//F10 paso a paso salta los métodos o funciones
+		//F11 entra a
+		//F8 ejecuta todo hasta el próximo breakpoint !!!!
+		//Si no existe otro hasta que se termine de ejecutar todo.
+
+
+	</script>
+
+</body>
+</html>

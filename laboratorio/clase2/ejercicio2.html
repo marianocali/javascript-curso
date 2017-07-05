@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>
+		Analice las siguientes expresiones en base a las 3 variables ya definidas: <br>
+		Determine si las expresiones se resuelven como VERDADERAS o como FALSAS. <br>
+		var edad = 22; <br>
+		var nombre = ‘Juan’; <br>
+		var sueldo = 12000; <br>
+	</p>
+	
+	<script type="text/javascript">
+		//variables
+		var edad = 22;
+		var nombre = 'Juan';
+		var sueldo = 12000;
+
+		//Expresión 1:
+		document.writeln(" Expresión 1: <br>");	
+		if(edad >= 22){
+			document.writeln("edad >= 22 = true");
+		}
+		else{			
+			document.writeln("edad >= 22 = false");
+		}
+
+		//Expresión 2:
+		document.writeln("<br><br> Expresión 2: <br>");	
+		if(edad == 22 && nombre != 'Juan'){
+			document.writeln("edad == 22 && nombre != 'Juan' = true");
+		}
+		else{
+			document.writeln("edad == 22 && nombre != 'Juan' = false");	
+		}
+
+		//Expresión 3:
+		document.writeln("<br><br> Expresión 3: <br>");	
+		if(sueldo > edad + 11000){
+			document.writeln("sueldo > edad + 11000 = true");
+		}
+		else{
+			document.writeln("sueldo > edad + 11000 = false");	
+		}
+
+		//Expresión 4:
+		document.writeln("<br><br> Expresión 4: <br>");	
+		if(nombre == 'Juan' || nombre == 'Diego'){
+			document.writeln("nombre == ‘Juan’ || nombre == 'Diego' = true");
+		}
+		else{
+			document.writeln("nombre == 'Juan' || nombre == 'Diego' = false");	
+		}
+
+		//Expresión 5:
+		document.writeln("<br><br> Expresión 5: <br>");	
+		if(!(sueldo > 23000)){
+			document.writeln("!(sueldo > 23000) = true");
+		}
+		else{
+			document.writeln("!(sueldo > 23000) = false");	
+		}
+
+		//Expresión 6:
+		document.writeln("<br><br> Expresión 6: <br>");	
+		if(edad == edad - 1){
+			document.writeln("edad == edad - 1 = true");
+		}
+		else{
+			document.writeln("edad == edad - 1 = false");	
+		}
+
+		//Expresión 7:
+		document.writeln("<br><br> Expresión 7: <br>");	
+		if(edad == 22 || nombre == 'Diego'){
+			document.writeln("edad == 22 || nombre == 'Diego' = true");
+		}
+		else{
+			document.writeln("edad == 22 || nombre == 'Diego' = false");	
+		}
+
+		//Expresión 8:
+		document.writeln("<br><br> Expresión 8: <br>");	
+		if(!(nombre == 'juan' && sueldo > 15000)){
+			document.writeln("!(nombre == 'juan' && sueldo > 15000) = true");
+		}
+		else{
+			document.writeln("!(nombre == 'juan' && sueldo > 15000) = false");
+		}
+
+		//Expresión 9:
+		document.writeln("<br><br> Expresión 9: <br>");	
+		if(edad == 22 && edad == 21){
+			document.writeln("edad == 22 && edad == 21 = true");
+		}
+		else{
+			document.writeln("edad == 22 && edad == 21 = false");
+		}
+
+		//Expresión 10:
+		document.writeln("<br><br> Expresión 10: <br>");	
+		if(sueldo % 2 + 23 > edad + 1){
+			document.writeln("sueldo % 2 + 23 >edad + 1 = true");
+		}
+		else{
+			document.writeln("sueldo % 2 + 23 >edad + 1 = false");
+		}
+
+		//Expresión 11:
+		document.writeln("<br><br> Expresión 11: <br>");	
+		if((edad > 15) || !(nombre == 'Juan' || nombre == 'Diego')){
+			document.writeln("(edad > 15) || !(nombre == 'Juan' || nombre == 'Diego') = true");
+		}
+		else{
+			document.writeln("(edad > 15) || !(nombre == 'Juan' || nombre == 'Diego') = false");
+		}
+
+		//Expresión 12:
+		document.writeln("<br><br> Expresión 12: <br>");	
+		if(!(sueldo > 1000) && !(edad < 15)){
+			document.writeln("!(sueldo > 1000) && !(edad < 15) = true");
+		}
+		else{
+			document.writeln("!(sueldo > 1000) && !(edad < 15) = false");
+		}
+		
+		
+		
+
+		
+		
+	</script>
+
+
+
+</body>
+</html>

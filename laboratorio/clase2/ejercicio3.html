@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<p>
+		Variables Booleanas <br>
+		Analice las siguientes expresiones en base a las 3 variables booleanas ya definidas: <br>
+		Determine si las expresiones se resuelven como VERDADERAS o como FALSAS. <br>
+		var adulto = true; <br>
+		var casado = false; <br>
+		var conHijos = true; <br>
+	</p>
+
+	<script type="text/javascript">
+		var adulto = true;
+		var casado = false;
+		var conHijos = true;
+
+		//Expresión 1:
+		document.writeln(" Expresión 1: <br>");	
+		if(adulto && casado){
+			document.writeln("adulto && casado = true");
+		}
+		else{			
+			document.writeln("adulto && casado = false");
+		}	
+
+		//Expresión 2:
+		document.writeln(" <br> Expresión 2: <br>");	
+		if(adulto && !casado){
+			document.writeln("adulto && !casado = true");
+		}
+		else{			
+			document.writeln("adulto && !casado = false");
+		}	
+
+		//Expresión 3:
+		document.writeln(" <br> Expresión 3: <br>");	
+		if(!casado && !conHijos){
+			document.writeln("!casado && !conHijos = true");
+		}
+		else{			
+			document.writeln("!casado && !conHijos = false");
+		}	
+
+		//Expresión 4:
+		document.writeln(" <br> Expresión 4: <br>");	
+		if(!casado && !conHijos){
+			document.writeln("!casado && !conHijos = true");
+		}
+		else{			
+			document.writeln("!casado && !conHijos = false");
+		}	
+
+		//Expresión 5:
+		document.writeln(" <br> Expresión 5: <br>");	
+		if(adulto || !conHijos){
+			document.writeln("adulto || !conHijos = true");
+		}else{			
+			document.writeln("adulto || !conHijos = false");
+		}	
+
+
+		//Expresión 6:
+		document.writeln(" <br> Expresión 6: <br>");	
+		if(adulto && casado && conHijos){
+			document.writeln("adulto && casado && conHijos = true");
+		}else{			
+			document.writeln("adulto && casado && conHijos = false");
+		} // F
+
+		//Expresión 7:
+		document.writeln(" <br> Expresión 7: <br>");	
+		if(adulto || casado || conHijos){
+			document.writeln("adulto || casado || conHijos = true");
+		}else{			
+			document.writeln("adulto || casado || conHijos = false");
+		} //T
+
+		//Expresión 8:
+		document.writeln(" <br> Expresión 8: <br>");	
+		if(!casado || !conHijos || adulto){
+			document.writeln("!casado || !conHijos || adulto = true");
+		}else{			
+			document.writeln("!casado || !conHijos || adulto = false");
+		} // T
+
+		//Expresión 9:
+		document.writeln(" <br> Expresión 9: <br>");	
+		if(!(casado || adulto)){
+			document.writeln("!(casado || adulto) = true");
+		}else{			
+			document.writeln("!(casado || adulto) = false");
+		} // F
+
+		//Expresión 10:
+		document.writeln(" <br> Expresión 10: <br>");	
+		if(!!(casado && adulto)){
+			document.writeln("!!(casado && adulto) = true");
+		}else{			
+			document.writeln("!!(casado && adulto) = false");
+		} // F
+
+		//Expresión 11:
+		document.writeln(" <br> Expresión 11: <br>");	
+		if(!adulto || !conHijos || !!adulto){
+			document.writeln("!adulto || !conHijos || !!adulto = true");
+		}else{			
+			document.writeln("!adulto || !conHijos || !!adulto = false");
+		} // T
+
+		//Expresión 12:
+		document.writeln(" <br> Expresión 12: <br>");	
+		if(!(conHijos || !casado && adulto)){
+			document.writeln("!(conHijos || !casado && adulto) = true");
+		}else{			
+			document.writeln("!(conHijos || !casado && adulto) = false");
+		} // F
+
+		
+
+	</script>
+
+
+</body>
+</html>

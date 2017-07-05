@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>Intercambie el valor de 2 variables ya definidas, cada una con su respectivo valor inicial.
+		<br>
+		Deberá informar mediante consola sus valores, una vez que ya hayan sido intercambiados.<br>
+
+		Ejemplo:<br>
+		var nro1 = 4; <br>
+		var nro2 = 32.1; <br><br>
+
+		Lograr mediante el intercambio que los valores queden dispuestos así:<br>
+
+		nro1 = 32.1; <br>
+		nro2 = 4<br>		
+	</p>
+	
+	<label>introduzca el primer nro:</label>	
+	<input type="number" id="n1" name="n1">	<br>
+
+	<label>introduzca el segundo nro:</label>	
+	<input type="number" id="n2" name="n2">	<br>
+
+	<input type="button" value="ingresar" name="boton" onclick="intercambiar()">
+	
+	<script type="text/javascript">
+		function intercambiar(){
+		
+    	var n1 = document.getElementById('n1').value;
+    	var n2 = document.getElementById('n2').value;	
+
+		var aux = n1;
+		n1 = n2;
+		n2 = aux;
+		document.write("Luego");
+		document.write("<br>");
+		document.write("nro1:", n1);
+		document.write("<br>");
+		document.write("nro2:", n2);
+		}
+
+
+	</script>
+
+</body>
+</html>
