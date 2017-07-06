@@ -1,0 +1,202 @@
+<body></body>
+<script>
+
+function crearFormulario()
+{
+	var f = document.createElement("form");
+	f.setAttribute("method","post");
+	f.setAttribute("action","submit_url.php");
+	
+	return f;
+}
+
+function validarDatos(f)
+{
+	// Estado Civil:
+	var estado_civil = document.getElementById('estadocivil');
+	
+	if(estado_civil.selectedIndex == 0)
+	{
+		alert('Por favor, seleccione su estado civil');
+		return false;
+	}
+		
+	// Estudios:
+	var inputs = document.getElementsByTagName("input");
+
+	var algunEstudioTildado = false; //por default es false
+	for(var i = 0; i < inputs.length; i++)
+	{	//pregunto el tipo de ese input ya que hay varios tipos
+		//me interesa solo el input type radio
+		if(inputs[i].type == "radio" && inputs[i].checked)
+		{
+			algunEstudioTildado = true;
+			break;
+		}
+	}
+	
+	if(!algunEstudioTildado) //si no selecciono ningún estudio
+	{
+		alert('Seleccione al menos 1 estudio.');
+		return false;
+	}	
+	
+	// Hobbies:
+	var algunHobbieTildado = false;
+	for(var i = 0; i < inputs.length; i++)
+	{
+		if(inputs[i].type == "checkbox" && inputs[i].checked)
+		{
+			algunHobbieTildado = true;
+			break;
+		}
+	}
+	
+	if(!algunHobbieTildado)
+	{
+		alert('Seleccione al menos 1 hobbie.');
+		return false;
+	}
+	
+	// Foto Adjunta:
+	var attach = document.getElementById('attach');
+	
+	if(attach.value != '')
+	{
+		var partes_file = attach.value.split('.');
+		if(partes_file[1] != 'jpg')
+		{
+			alert('Solo se admiten imagenes.');
+			return false;
+		}
+	}
+	
+	colocarImagenOK();
+	window.setTimeout(function() { f.submit(); },2000);
+
+}
+
+function colocarImagenOK()
+{
+	var imagen = document.createElement('img');
+	imagen.src = 'OK.png';
+		
+	document.body.appendChild(imagen);
+}
+
+function generarSelectDesplegable(f)
+{
+	f.appendChild(document.createTextNode("Estado Civil: "));
+	
+	var select = document.createElement("select");
+	select.setAttribute("name","estadocivil");
+	select.setAttribute("id","estadocivil");
+
+	var opciones = new Array("Seleccione..","soltero","casado","divorciado","viudo");
+
+	for(var i = 0; i < opciones.length; i++)
+	{
+		var valor = opciones[i];
+
+		var opcion = document.createElement("option");
+		opcion.value = valor;
+		opcion.text = valor;
+
+		select.appendChild(opcion);
+	}
+
+	f.appendChild(select);
+	f.appendChild(document.createElement("br"));
+	f.appendChild(document.createElement("br"));
+}
+
+function generarCheckBoxes(f)
+{
+	f.appendChild(document.createTextNode("Hobbies: "));
+	
+	var items = new Array("musica","cine","deportes","aire libre");
+
+	for(var i = 0; i < items.length; i++)
+	{
+		var valor = items[i];
+	
+		var checkbox = document.createElement("input");
+	
+		checkbox.setAttribute("type","checkbox");
+		checkbox.setAttribute("value",valor);
+		checkbox.setAttribute("name","hobbies[]");
+		
+		f.appendChild(checkbox);
+		f.appendChild(document.createTextNode(valor));
+	}
+	
+	f.appendChild(document.createElement("br"));
+	f.appendChild(document.createElement("br"));
+}
+
+function generarRadioButtons(f)
+{
+	f.appendChild(document.createTextNode("Estudios Completos: "));
+	
+	var items = new Array("primarios","secundarios","terciarios / universitarios","postgrados");
+
+	for(var i = 0; i < items.length; i++)
+	{
+		var valor = items[i];
+		var radio = document.createElement("input");
+	
+		radio.setAttribute("type","radio");
+		radio.setAttribute("value",valor);
+		radio.setAttribute("name","estudios");
+			
+		f.appendChild(radio);
+		f.appendChild(document.createTextNode(valor));
+	}
+
+	f.appendChild(document.createElement("br"));
+	f.appendChild(document.createElement("br"));
+}
+
+function generarAttachFile(f)
+{
+	f.appendChild(document.createTextNode("Su foto aqui: "));
+	
+	var file = document.createElement("input");
+	file.setAttribute("name","attach");
+	file.setAttribute("id","attach");
+	file.setAttribute("type","file");
+	
+	f.appendChild(file);
+	f.appendChild(document.createElement("br"));
+	f.appendChild(document.createElement("br"));
+}
+
+function generarBotonesFormulario(f)
+{
+	var send = document.createElement("input");
+	send.setAttribute("type","button");
+	send.setAttribute("value","Enviar");
+	send.onclick = function () { validarDatos(f); } ;
+
+	var reset = document.createElement("input");
+	reset.setAttribute("type","reset");
+	reset.setAttribute("value","Reingresar datos");
+	
+	f.appendChild(send);
+	f.appendChild(reset);
+}
+
+function colocarFormularioEnPantalla(f)
+{
+	document.body.appendChild(f);
+}
+
+var form = crearFormulario();
+generarSelectDesplegable(form);
+generarRadioButtons(form);
+generarCheckBoxes(form);
+generarAttachFile(form);
+generarBotonesFormulario(form);
+colocarFormularioEnPantalla(form);
+
+</script>

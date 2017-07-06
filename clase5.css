@@ -1,0 +1,29 @@
+*{
+	margin: 0;
+	padding: 0
+}
+
+#columna1 {
+	color: blue;
+	position: relative;
+	background-color: #ccc;		
+	width: 100px;
+	height: 250px;
+	float:left;
+	padding: 10px;
+}
+
+
+#columna2 {
+	width: 400px;
+	height: 250px;
+	color: blue;		
+	float:left; 	
+	margin-right:40px;
+	background-color: #dfd;
+	padding: 10px;
+}
+
+.error{
+	border-color: red;
+ }

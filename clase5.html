@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="clase5.css">
+	<title>Document</title>
+</head>
+<body>
+
+	<form action="http://educacionit.com.ar" name="formulario" onsubmit="return validar(this)">
+
+		<div id="columna1">
+			<label>Nombre</label>
+			<br>			
+			<label>email</label>
+			<br>
+			<label>País</label>
+			<br>
+			<label>Clave</label>
+			<br>
+			<label>Repita la clave</label>
+			<br>
+			<label>Comentarios</label>
+			<br><br><br><br>
+			<label>Sexo</label>
+		</div>
+		<div id="columna2"> 
+			<input type="text" id= "name" name="nombre" onblur="despintar(this)">	
+			<br>
+			<input type="email" id= "email" name="email" onblur="despintar(this)">	
+			<br>
+			<select name = "pais" id="pais" onblur="despintar(this)">
+				<option value="0">Seleccione un país</option>
+				<option value="Agentina">Argentina</option>
+				<option value="Brasil">Brasil</option>
+				<option value="Colombia">Colombia</option>
+			</select>
+			<br>
+			<input type="password" id= "clave" name="clave" onblur="despintar(this)">	
+			<br>
+			<input type="password" id= "clave2" name="clave2" onblur="despintar(this)">
+			<br>
+			<textarea  rows="4" cols="50" id="comentarios" name="comentarios" onblur="despintar(this)">
+			</textarea>	
+			<br>		
+			<input type="radio" name="sexo" value ="F"> femenino
+			<br>
+
+			<input type="radio" name="sexo" value ="M"> masculino			
+			<br>			
+
+			<input type="checkbox" name="novedades"> novedades	
+			
+			<br>
+			<input type="submit" name="enviar" value="enviar">	
+		<br>
+		</div>			
+		
+	</form>
+
+	<script type="text/javascript">
+		
+		/*la funcion va a devolver true o false
+		 si retorna true va a ir a la pagina indicada en el action
+		sino va a permanecer en la página.
+		Cada vez que veamos que algún dato no es correcto se va a enviar
+		un false para que siga completando el formulario
+		*/
+		function validar(form){
+			//var formulario = document.querySelectot("#formulario");			
+			esValido = true;	
+			console.log(form);
+			if (form.nombre.value == ""){
+				console.log("nombre vacio");
+				//form.nombre.style.borderColor ="red";
+				form.nombre.classList.add("error");
+				esValido = false;
+			}
+			else{
+				form.nombre.classList.remove("error");
+			}
+			if (form.email.value == ""){
+				console.log("email vacio");				
+				form.email.classList.add("error");
+				esValido = false;
+			}	
+			else{
+				form.email.classList.remove("error");
+			}				
+			if (form.pais.selectedIndex == "0"){
+				console.log("país vacio");				
+				form.pais.classList.add("error");
+				esValido = false;
+			}	
+			else{
+				form.pais.classList.remove("error");
+			}
+			if(form.clave.value != form.clave2.value || form.clave.value ==""){
+				form.clave2.classList.add("error");	
+				form.clave.classList.add("error");
+				esValido = false;
+			}								
+			return esValido;
+		}
+
+		/*
+			se podríar da un valor al no seleccionar nada
+			<option value="-1">Seleccione un país</option>
+			y para leerlo en vez de usar 
+			form.pais.selectedIndex
+			se usa
+			form.pais.value
+			y ahí se obtiene el -1
+
+		*/	
+
+		/*
+		Con esta función se va a despitar cuando se salga del elemento.
+		*/
+		function despintar(elem){
+			elem.classList.remove("error");
+		}
+
+	</script>
+</body>
+
+
+</html>

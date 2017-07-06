@@ -1,0 +1,195 @@
+<body></body>
+<script>
+
+function crearFormulario()
+{
+	var f = document.createElement("form");
+	f.setAttribute("method","post");
+	f.setAttribute("action","submit_url.php");
+	
+	return f;
+}
+
+//recibe el elemento que va a modificar
+//setea un fondo y el color de la letra
+function colorearCaja(elem,colorFondo,colorTexto)
+{
+	elem.style.backgroundColor = colorFondo;
+	elem.style.color = colorTexto;
+}
+
+function validarDatos(f)
+{
+	// Usuario:
+	var usuario = document.getElementById('usuario');
+	
+	if(usuario.value == '')
+	{
+		alert('Por favor, ingrese su usuario.');
+		usuario.focus(); //se va a poner el cursor en ese elemento
+		colorearCaja(usuario,'red','white');
+		return false;
+	}
+
+	colorearCaja(usuario,'white','black');
+		
+	// Passwords:
+	var pass1 = document.getElementById('pass1');
+	var pass2 = document.getElementById('pass2');
+	
+	if(pass1.value == '' || pass2.value == '')
+	{
+		alert('Por favor, ingrese su password y re-confirme.');
+		pass1.focus();
+		colorearCaja(pass1,'red','white');
+		colorearCaja(pass2,'red','white');
+		return false;
+	}
+	
+	if(pass1.value != pass2.value)
+	{
+		alert('Verifique los passwords, no coinciden.');
+		pass1.focus();
+		colorearCaja(pass1,'red','white');
+		colorearCaja(pass2,'red','white');
+		return false;
+	}
+	
+	if(pass1.value.length < 8 || pass2.value.length < 8)
+	{
+		alert('El password debe tener al menos 8 caracteres.');
+		pass1.focus();
+		colorearCaja(pass1,'red','white');
+		colorearCaja(pass2,'red','white');
+		return false;
+	}
+	
+	colorearCaja(pass1,'white','black');
+	colorearCaja(pass2,'white','black');
+	
+	// Comentarios:
+	var comentarios = document.getElementById('comentarios');
+	
+	if(comentarios.value != '')
+	{
+		if(!isNaN(comentarios.value))
+		{
+			alert('No admitimos valores numericos como comentarios.');
+			comentarios.focus();
+			colorearCaja(comentarios,'red','white');
+			return false;
+		}
+	}
+	//si pasa la validación la colorea en blanco y negro
+	colorearCaja(comentarios,'white','black');
+	colocarImagenOK();
+	
+	window.setTimeout(function() { f.submit(); },2000);
+	/*recibe 2 parametros: 
+	el primero es una función
+	el segundo es un tiempo en ms
+	ejecuta la función luego de x ms
+	Me va a dar el tiempo para ver la imagen.
+
+	f.submit() es igual a poner el return true
+	va a submitear el formulario
+	*/
+}
+
+function colocarImagenOK()
+{
+	var imagen = document.createElement('img');
+	imagen.src = 'OK.png';
+		
+	document.body.appendChild(imagen);
+}
+
+function generarCampoTexto(f)
+{
+	var caja_usuario = document.createElement("input");
+	caja_usuario.setAttribute("type","text");
+	caja_usuario.setAttribute("name","usuario");
+	caja_usuario.setAttribute("id","usuario");
+	caja_usuario.setAttribute("placeholder","su usuario aqui..");
+	
+	f.appendChild(document.createTextNode("Ingrese un usuario:"));  //no debería usarse, deberia maquetarse con label
+	f.appendChild(caja_usuario);
+	f.appendChild(document.createElement("br"));
+
+}
+
+function generarCamposPassword(f)
+{
+	var caja_pass1 = document.createElement("input");
+	caja_pass1.setAttribute("type","password");
+	caja_pass1.setAttribute("name","pass1");
+	caja_pass1.setAttribute("id","pass1");
+	
+	//Un FORMA MEJOR DE HACERLO
+	/*
+	var label = document.createElement("label");
+	label.setAttribute("for","pass1");
+	label.innerHTML = "ingrese el password";
+	*/
+
+	f.appendChild(document.createTextNode("Ingrese su password: "));
+	f.appendChild(caja_pass1);
+	f.appendChild(document.createElement("br"));
+	
+	var caja_pass2 = document.createElement("input");
+	caja_pass2.setAttribute("type","password");
+	caja_pass2.setAttribute("name","pass2");
+	caja_pass2.setAttribute("id","pass2");
+	
+
+
+	f.appendChild(document.createTextNode("Re-ingrese su password: "));
+	f.appendChild(caja_pass2);
+	f.appendChild(document.createElement("br"));
+}
+
+function generarTextArea(f)
+{
+	var text_area = document.createElement("textarea");
+	text_area.setAttribute("name","comentarios");
+	text_area.setAttribute("id","comentarios");
+	text_area.setAttribute("cols",30);
+	text_area.setAttribute("rows",5);
+	text_area.setAttribute("placeholder","sus comentarios aqui..");
+		
+	f.appendChild(text_area);
+	f.appendChild(document.createElement("br"));
+}
+
+function generarBotonesFormulario(f)
+{
+	var send = document.createElement("input");
+	send.setAttribute("type","button");
+	send.setAttribute("value","Enviar");
+	send.onclick = function () { return validarDatos(f); } ;
+	/*el onclick se debe llamar siempre dentro de una función
+	en este caso es una función anónima
+	*/
+
+
+	var reset = document.createElement("input");
+	reset.setAttribute("type","reset");
+	reset.setAttribute("value","Reingresar datos");
+	
+	f.appendChild(send);
+	f.appendChild(reset);
+}
+
+function colocarFormularioEnPantalla(f)
+{	//el formulario se agrega en el body
+	document.body.appendChild(f);
+}
+
+var form = crearFormulario();
+generarCampoTexto(form);
+generarCamposPassword(form);
+generarTextArea(form);
+generarBotonesFormulario(form);
+colocarFormularioEnPantalla(form);
+
+</script>
