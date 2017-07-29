@@ -1,0 +1,20 @@
+<script>
+
+function cuantosStringsTengo(vector)
+{
+	var cantidad = 0;
+	for(var i = 0; i < vector.length; i++)
+	{
+		if(typeof vector[i] == 'string')
+		{
+			cantidad++;
+		}
+		
+	}
+	
+	return cantidad;
+}
+
+alert('El vector tiene: ' + cuantosStringsTengo(new Array("juan","perez",35,43831122,"soltero")) + ' strings');
+
+</script>

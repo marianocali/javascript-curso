@@ -1,0 +1,25 @@
+<script>
+
+function sonTodosPares(vector)
+{
+	for(var i = 0; i < vector.length; i++)
+	{
+		if(vector[i] % 2 == 1)
+		{
+			return false;
+		}
+	}
+	
+	return true;
+}
+
+if(sonTodosPares(new Array(4,6,8,10,22,8,6)))
+{
+	alert('Todos los valores son pares.');
+}
+else
+{
+	alert('Existen valores impares.');
+}
+
+</script>

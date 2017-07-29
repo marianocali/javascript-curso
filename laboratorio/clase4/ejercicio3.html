@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="ejercicio3.css">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		Codificando en JavaScript, cree la función “colocarImagen”.
+		Esta función deberá ubicar en pantalla una imagen cualquiera, cada 3 segundos y en forma perpetua.
+
+	</pre>
+			
+	<script type="text/javascript">
+		/*
+		function colocarImagen(){
+			var desplegable = document.createElement('select');
+			var opciones = new Array("Item 1","Item 2","Item N");
+
+			for(var i = 0; i < opciones.length; i++)
+			{
+				opcion = document.createElement("option");
+				opcion.innerHTML = opciones[i];
+				desplegable.appendChild(opcion);
+			}
+
+			document.body.appendChild(desplegable);	
+		}
+		setInterval("colocarImagen()",50);
+ 		*/
+
+ 		function colocarImagen(){
+			var imagen = document.createElement('img');
+			imagen.src = 'img1.jpg';
+			imagen.className = "imgClass";
+			document.body.appendChild(imagen);	
+		}
+		
+		setInterval("colocarImagen()",3000);
+		
+
+	</script>
+
+</body>
+</html>

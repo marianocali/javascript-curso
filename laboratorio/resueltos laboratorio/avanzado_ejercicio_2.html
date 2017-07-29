@@ -1,0 +1,26 @@
+<body></body>
+<script>
+
+function imprimirValor(valor)
+{
+	alert(valor);
+}
+
+var caja = document.createElement("input");
+caja.type = "text";
+caja.placeholder = "Ingrese un valor";
+document.body.appendChild(caja);
+
+var boton = document.createElement("input");
+boton.type = "button";
+boton.value = "Comenzar proceso";
+boton.onclick = function () { 
+
+	setInterval("imprimirValor(caja.value)",1000);
+	document.body.innerHTML = '';
+
+};
+
+document.body.appendChild(boton);
+
+</script>

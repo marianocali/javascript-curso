@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio2</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		
+
+		function sumatoria_impares(vector_nros)
+		{
+			var suma = 0;
+			var nro;
+			for(var n = vector_nros.length - 1; n >=0; n--)
+			{
+				nro = vector_nros[n];
+
+				if(nro % 2 == 1)
+				{
+					suma = suma + nro;
+				}
+			}
+			return suma;
+		}
+
+
+		function sumatoriaDeImpares(vectorNros)
+		{
+			var suma;
+			for(var i = 0; i < vectorNros.length; i++)
+			{
+				if(i == 0)
+				{
+					suma = 0;
+				}                           
+
+				if(0 == vectorNros[i] % 2)
+				{
+					suma = suma + 0;
+					continue;
+				}
+				else
+				{
+					suma = vectorNros[i] + suma;
+				}
+			}
+
+			return suma;
+
+		}
+
+		var vector = [1,2,3,4];
+		console.log("sumatoria1:" + sumatoria_impares(vector));
+		console.log("sumatoria2:" + sumatoriaDeImpares(vector));
+		
+	</script>
+</body>
+</html>

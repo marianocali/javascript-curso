@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		Codificando en JavaScript:
+
+		Cree una caja de texto de tipo input y un botón.
+
+		Cuando se clickee el botón, deberá aparecer en pantalla, cada 5 segundos y en forma perpetua, el valor ingresado en la caja <br>  a través de una ventana de alerta.
+
+		Al comenzar el proceso (apretar el botón) deberá borrarse de la pantalla tanto la caja de texto como el botón con la instrucción: 
+		document.body.innerHTML = '';
+	</pre>
+
+	<script type="text/javascript">
+	
+	function dibujarInput(){
+		var input = document.createElement('input');
+		input.setAttribute("type","text");
+		input.setAttribute("name","caja");
+		input.setAttribute("id","caja");
+		input.setAttribute("placeholder", "ingrese un texto");
+		document.body.appendChild(input);
+	}
+
+	function dibujarBoton(){
+		var boton = document.createElement('input');
+		boton.setAttribute("type","button");
+		boton.setAttribute("value","Enviar");
+		document.body.appendChild(boton);
+		boton.onclick = function () { 
+			setInterval("mostrarDatos()", 1000);
+		} ;
+		document.body.appendChild(boton);
+		
+	}
+
+		
+	 dibujarInput();
+	 dibujarBoton();
+
+	 function mostrarDatos(){
+	 	var datoIngresado = document.querySelector('#caja').value;
+	 	alert("value: " + datoIngresado);
+	 	//console.log(datoIngresado);
+	 }
+	 //setInterval("document.writeln(datoIngresado)",3000);
+
+	</script>
+</body>
+</html>
