@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		Programando con el lenguaje JavaScript, cree un formulario que contenga:
+
+		Un grupo de checkboxes que permitan seleccionar las distintas redes sociales de un usuario (Twitter, Facebook, Instagram, etc).
+		4 botones con las leyendas “contar tildados”, “contar destildados”, “tildar todo” y “destildar todo” respectivamente.
+		Al presionar cada uno de los botones:
+
+		Al presionar el botón “contar tildados”: Se informará mediante una ventana de alerta cuantos checkboxes han sido seleccionados.
+		Al presionar el botón “contar destildados”: Se informará mediante una ventana de alerta cuantos checkboxes NO han sido seleccionados.
+		Al presionar el botón “tildar todo”: Deben autoseleccionarse todos los checkboxes.
+		Al presionar el botón “destildar todo”: Deben destildarse todos los checkboxes.
+
+
+		NOTA: Los botones no deben enviar el formulario, solo hacer su labor.
+		AYUDA / SUGERENCIAS:
+
+		Utilice 4 funciones personalizadas, asociadas a cada uno de los botones.
+		Apóyese en la herramienta getElementsByTagName para obtener todos los elementos de tipo input (devuelve un vector de elementos, el cual puede ser recorrido con un bucle for).
+		Para discriminar el tipo de input (los checkboxes o bien los botones), verifique el “type” del elemento.
+		Apóyese en la propiedad “checked” (devuelve un booleano) de cada uno de los elementos del vector obtenido con getElementsByTagName  para verificar si un checkbox está tildado o no.
+		Las funciones asociadas al primer y al segundo botón son muy similares entre sí, idem las funciones del tercer y cuarto botón.
+	</pre>
+
+	<script type="text/javascript">
+		
+
+		function crearFormulario()
+		{
+			var f = document.createElement("form");
+			f.setAttribute("method","post");
+			f.setAttribute("action","submit_url.php");
+
+			return f;
+		}
+
+		function crearCheckBoxRedesSociales(form){
+			f.appendChild(document.CreateTextNode("Redes sociales"));
+			var redes = ["Twitter", "Facebook", "Instagram", "Linkedin"];
+		
+			for (var i=0; i< items.length; i++){
+				var valor = items[i];
+
+				var checkbox = document.createElement("input");
+
+				checkbox.setAttribute("type", "input");
+				checkbox.setAttribute("value", item[i]);
+				checkbox.setAttribute("name","redes[]");
+				
+				form.appendChild(checkbox);
+			}
+
+		}
+
+
+/*
+		Un grupo de checkboxes que permitan seleccionar las distintas redes sociales de un usuario (Twitter, Facebook, Instagram, etc).
+		4 botones con las leyendas “contar tildados”, “contar destildados”, “tildar todo” y “destildar todo” respectivamente.
+		Al presionar cada uno de los botones:
+*/
+
+	</script>
+
+
+
+</body>
+</html>

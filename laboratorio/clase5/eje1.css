@@ -1,0 +1,10 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.mensajeError{
+	visibility:hidden;
+	width: 400px;
+	color: red;
+}

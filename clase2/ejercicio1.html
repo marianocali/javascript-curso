@@ -1,21 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
 
-	<script type="text/javascript">
-	
-	var a= 10;
-	var b= prompt("Ingrese cuanto incrementar");  //no se usa en producción
-	a+=parseInt(b);
-	console.log(a);
-	document.write(a);	
-	alert(a);
+		<script type="text/javascript">
+
+	/*	var a= 10;
+		var b= prompt("Ingrese cuanto incrementar");  //no se usa en producción
+		a+=parseInt(b);
+		console.log(a);
+		document.write(a);	
+		alert(a);
+		*/
+		
+		function sumar(value1,value2)
+		{
+			return value1 + value2;
+		}
+
+		function calculo(accion,vectorNros)
+		{
+			if(accion == sumar)
+			{
+				return sumar(vectorNros[0],vectorNros[1]);
+			}
+		}
+
+		calculo(sumar,new Array(5,7,8,3));
 
 	</script>
 
-</body>
-</html>
+	</body>
+	</html>

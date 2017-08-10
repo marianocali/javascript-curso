@@ -1,0 +1,107 @@
+<body></body>
+<script>
+
+function contarCheckBoxesTildados()
+{
+	var elems = document.getElementsByTagName("input");
+	
+	var tildados = 0;
+	for(var i = 0; i < elems.length; i++)
+	{
+		if(elems[i].type == "checkbox" && elems[i].checked)
+		{
+			tildados++;
+		}
+	}
+	
+	return 'Se han tildado ' + tildados + ' check boxes';
+}
+
+function contarCheckBoxesDestildados()
+{
+	var elems = document.getElementsByTagName("input");
+	
+	var destildados = 0;
+	for(var i = 0; i < elems.length; i++)
+	{
+		if(elems[i].type == "checkbox" && !elems[i].checked)
+		{
+			destildados++;
+		}
+	}
+	
+	return 'NO se han tildado ' + destildados + ' check boxes';
+}
+
+function tildarTodosCheckBoxes()
+{
+	var elems = document.getElementsByTagName("input");
+
+	for(var i = 0; i < elems.length; i++)
+	{
+		if(elems[i].type == "checkbox" && !elems[i].checked)
+		{
+			elems[i].checked = true;
+		}
+	}
+}
+
+function destildarTodosCheckBoxes()
+{
+	var elems = document.getElementsByTagName("input");
+
+	for(var i = 0; i < elems.length; i++)
+	{
+		if(elems[i].type == "checkbox" && elems[i].checked)
+		{
+			elems[i].checked = false;
+		}
+	}
+}
+
+var f = document.createElement("form");
+f.setAttribute("method","post");
+f.setAttribute("action","submit_url.php");
+
+var redes = new Array("Facebook","Twitter","Instagram");
+
+for(var i = 0; i < redes.length; i++)
+{
+	var valor = redes[i];
+	
+	var checkbox = document.createElement("input");
+	checkbox.setAttribute("type","checkbox");
+	checkbox.setAttribute("value",valor);
+	checkbox.setAttribute("name","redes[]");
+	
+	f.appendChild(document.createTextNode(valor));
+	f.appendChild(checkbox);
+}
+
+var boton1 = document.createElement("input");
+boton1.type = "button";
+boton1.value = "Contar tildados";
+boton1.onclick = function () { alert(contarCheckBoxesTildados()); };
+f.appendChild(boton1);
+
+var boton2 = document.createElement("input");
+boton2.type = "button";
+boton2.value = "Contar destildados";
+boton2.onclick = function () { alert(contarCheckBoxesDestildados()); };
+f.appendChild(boton2);
+
+var boton3 = document.createElement("input");
+boton3.type = "button";
+boton3.value = "Tildar todo";
+boton3.onclick = function () { tildarTodosCheckBoxes(); };
+f.appendChild(boton3);
+
+var boton4 = document.createElement("input");
+boton4.type = "button";
+boton4.value = "Destildar todo";
+boton4.onclick = function () { destildarTodosCheckBoxes(); };
+f.appendChild(boton4);
+
+document.body.appendChild(f);
+
+</script>

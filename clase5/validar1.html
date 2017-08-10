@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="" method="POST" name="contacto" enctype="multipart/form-data">
+		
+		<label>Nombre:</label>
+		<input type="text" name="nombre">
+		<label >Email</label>
+		<input type="text" name="email">
+		
+		<br>
+		<label>Asunto</label>
+		<select name="asunto">			
+			<option value="">Elija su asunto</option>
+			<option value="1">Contacto</option>
+			<option value="2">Consulta</option>
+			<option value="3">Reclamos</option>
+			<option value="4">Pedidos</option>
+			<option value="5">Otros</option>
+		</select> 	
+		<br>
+		<label >Deja un comentario</label>
+		<br>
+		<textarea name="comentario" id="" cols="30" rows="10">
+			
+		</textarea>
+		<br>
+
+		<label >Subir archivo</label>
+		<input type="file" name="archivo">
+		
+		<br>
+		<br>
+		<input type="button" value="Enviar" onclick="validar()">
+		<input type="reset" VALUE="limpiar"	>
+	
+	</form>
+
+	<script type="text/javascript">
+		function validar(){
+			var form = document.contacto;
+			var esNombreValido = false;
+			var esEMailValido = false;
+			var esAsuntoValido  = false;
+			var esComentarioValido = false;
+
+			//Validate Nombre
+			if (form.nombre.value == ''){
+				form.nombre.style.borderColor = "red";
+			}
+			else{ 
+				esNombreValido = true;
+				form.nombre.style.borderColor = "";
+			}
+
+			// validate email
+			if (form.email.value == "" ||  form.email.value.indexOf("@") == -1){
+				form.email.style.borderColor = "red";
+			 }
+			else{
+				esEMailValido = true;
+				form.email.style.borderColor = "";
+			}
+
+			//validate Asunto
+			if(form.asunto.selectedIndex == 0){
+				form.asunto.style.borderColor = "red";
+			}
+			else{
+				esAsuntoValido  = true;
+				form.asunto.style.borderColor = "";	
+			}
+
+			// validate comentario
+			if(form.comentario.value == ""){
+				form.comentario.style.borderColor = "red";
+				esComentarioValido = true;
+			}
+			else{
+				esComentarioValido = true;
+				form.comentario.style.borderColor = "";
+			}
+
+			//submit
+			if(esEMailValido && esAsuntoValido && esNombreValido && esComentarioValido )	
+			{
+				form.submit();
+			}
+
+		}
+
+
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		Codificando en JavaScript, cree la función “cuantosStringsTengo”:
+
+		Esta función recibirá a través de su parámetro, un vector con valores de distinto tipo: numéricos, strings, booleanos.
+
+		La función deberá retornar la cantidad de valores tipo string que contenga el vector.
+
+		Ejemplo: “juan”,”perez”,35,”soltero”,43832233,false,”argentino”         devolverá: 4
+
+		AYUDA:
+		Apóyese en la función “typeof”.
+	</pre>
+
+	<script type="text/javascript">
+
+		var arreglo = ["juan","perez",35,"soltero",43832233,false,"argentino"];
+
+		function cuantosStringsTengo(arreglo){
+			var nroString = 0;
+			for (var i =0; i < arreglo.length; i++) 
+			{
+
+				if( typeof(arreglo[i])	=== 'string')	
+				{
+					nroString++;
+				}
+			}
+			return nroString;
+		}
+
+		document.writeln("número de Strings para el arreglo " + "<br>" + 
+		arreglo + "<br>" +  cuantosStringsTengo(arreglo));
+	</script>
+
+</body>
+</html>

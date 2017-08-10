@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		Programando en JavaScript, cree un formulario que contenga:
+
+		Un conjunto de radio buttons, que permitan seleccionar el estado civil de una persona.
+		Un botón.
+
+		Al presionar el botón, deberá informarse mediante una ventana de alerta, el valor seleccionado; y posteriormente, enviar el formulario.
+
+		En caso de no haber seleccionado ninguna opción, informar dicha situación con una leyenda de error, también mediante el uso de una ventana de alerta (No se enviará el formulario en ese caso).
+		AYUDA / SUGERENCIAS:
+
+		Cree una función personalizada asociada al click del botón.
+		Apóyese en la herramienta getElementsByTagName para obtener todos los elementos de tipo input (devuelve un vector de elementos, el cual puede ser recorrido con un bucle for).
+		Para discriminar el tipo de input (los radio o bien el botón), verifique el “type” del elemento.
+		Apóyese en la propiedad “checked” (devuelve un booleano) de cada uno de los elementos del vector obtenido con getElementsByTagName  para verificar si un radio button está tildado o no.
+	</pre>
+	
+
+	<script type="text/javascript">
+		function crearFormulario()
+		{
+			var f = document.createElement("form");
+			f.setAttribute("method","post");
+			f.setAttribute("action","submit_url.php");
+
+			return f;
+		}
+
+		function crearBoton(f){
+			var boton = document.createElement("input");
+			boton.setAttribute("type","button");
+			boton.setAttribute("value","enviar");
+			boton.onclick = function () { validarDatos(f); } ;
+			f.appendChild(boton);
+
+		}
+
+		function crearRadioEstadoCivil(f)
+		{
+			f.appendChild(document.createTextNode("Estado civil: "));
+
+			var items = new Array("Soltera/o","Casada/o","Viuda/o","Divorciada/o");
+
+			for(var i = 0; i < items.length; i++)
+			{
+				var valor = items[i];
+				var radio = document.createElement("input");
+
+				radio.setAttribute("type","radio");
+				radio.setAttribute("value",valor);
+				radio.setAttribute("name","civil");
+				radio.setAttribute("id","estadoCivil");
+
+				f.appendChild(radio);
+				f.appendChild(document.createTextNode(valor));
+			}
+
+			f.appendChild(document.createElement("br"));
+			f.appendChild(document.createElement("br"));
+		}
+
+		function colocarFormularioEnPantalla(f)
+		{
+			document.body.appendChild(f);
+		}
+
+		var form = crearFormulario();
+		crearRadioEstadoCivil(form);
+		crearBoton(form);
+		colocarFormularioEnPantalla(form);
+
+		function validarDatos(f){
+			
+			var estadoCivil = document.querySelector('input[name="civil"]:checked');
+			if(estadoCivil == null){
+				alert("Debe ingresar estado civil");				
+			}
+			else
+			{
+				alert(estadoCivil.value);
+				f.submit();
+			}
+
+		}
+
+	</script>
+	
+
+</body>
+</html>

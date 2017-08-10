@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="eje1.css">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		Programando en JavaScript, cree un formulario que contenga:
+
+		Un campo para ingresar un password.
+		Un botón.
+
+		Al presionar el botón, deberá validarse que la caja de password tenga al menos 6 caracteres y además dicho valor sea de tipo alfanumérico.
+
+		Si el password es correcto, enviar el formulario.
+		Si el password es incorrecto, notificar la situación mediante una ventana de alerta, y no enviar el formulario hasta corregir el problema.
+
+		NOTA: Si no se completa la caja, también se considerará como un caso erróneo.
+		AYUDA / SUGERENCIAS:
+
+		Cree una función personalizada asociada al click del botón.
+		Use la propiedad “length”, válida para cadenas de texto.
+	</pre>
+	
+
+	<form action = ""  method="post" name="formulario">
+		<input type="password" name="clave">
+		
+		
+		<label id ="mensajeError" class="mensajeError" name="mensajeError"> la clave ingresada debe tener al menos 6 caracteres
+		</label>
+		<br>
+
+		<input type="button" placeholder="validarClave" value = "Enviar" name="boton" onclick="validarClave()">
+	</form>
+
+
+	<script type="text/javascript">
+		
+	function validarClave(){
+		var clave = document.formulario.clave.value;
+		// document.writeln(clave);
+		// document.writeln(clave.length);
+		if (clave.length < 6){
+			var msgError = document.getElementById('mensajeError');		
+			document.getElementById('mensajeError').style.visibility = "visible";
+			return false;
+		}
+		else{
+			document.formulario.submit();
+		}
+	}
+
+	</script>
+</body>
+</html>

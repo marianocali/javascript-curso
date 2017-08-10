@@ -1,0 +1,49 @@
+<body></body>
+<script>
+
+function verificarRadios(form)
+{
+	var elems = document.getElementsByTagName("input");
+
+	for(var i = 0; i < elems.length; i++)
+	{
+		if(elems[i].type == "radio" && elems[i].checked)
+		{
+			alert("Valor seleccionado: " + elems[i].value);
+			form.submit();
+		}
+	}
+	
+	alert("No se ha seleccionado ningun radio button");
+	return false;
+	
+}
+
+var f = document.createElement("form");
+f.setAttribute("method","post");
+f.setAttribute("action","submit_url.php");
+
+var estados = new Array("soltero","casado","viudo","divorciado");
+
+for(var i = 0; i < estados.length; i++)
+{
+	var valor = estados[i];
+	
+	var radio = document.createElement("input");
+	radio.type = "radio";
+	radio.value = valor;
+	radio.name = "estados_civiles";
+	
+	f.appendChild(document.createTextNode(valor)); //crea la leyenda
+	f.appendChild(radio);
+}
+
+var boton = document.createElement("input");
+boton.type = "button";
+boton.value = "Verificar radios";
+boton.onclick = function () { verificarRadios(f); };
+
+f.appendChild(boton);
+document.body.appendChild(f);
+
+</script>

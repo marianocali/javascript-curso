@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		Codificando en JavaScript, cree la función “sonTodosPares”:
+
+		Esta función recibirá a través de su parámetro, un vector de números enteros como argumento.
+
+		La función retornará un valor booleano:
+
+		true  ⇒  Si todos los valores del vector argumento son pares.
+		Ejemplo: 2, 8, 16, 4, 6, 200
+		false ⇒  Si por lo menos algún valor del vector argumento NO es par.
+		Ejemplo: 52, 4, 18, 3, 2, 30
+	</pre>	
+
+	<script type="text/javascript">
+		
+		var arreglo = [2, 8, 16, 4, 6, 200];
+		var arreglo2 = [52, 4, 18, 3, 2, 30];
+
+		document.write("arreglo: " + arreglo  + " " + sonTodosPares(arreglo) + "<br>");
+		document.write("arreglo: " + arreglo2 + " " + sonTodosPares(arreglo2) + "<br>");	
+
+		function sonTodosPares(arreglo){
+			for(var i=0; i < arreglo.length; i++){
+				if ((arreglo[i] % 2) != 0)
+					return false;
+			}
+			return true;
+
+		}
+
+		var descuento = 15;
+		var precio = prompt("Ingrese un precio");
+
+		document.write("El precio con IVA es " + calcularIva(precio) + "<br>");
+		document.write("El precio con descuento es " + calcularDescuento(precio, descuento));
+
+		//var precio = prompt("Ingrese el precio a calcular");
+		function calcularIva(pcio){
+			return pcio *1.21;
+		}
+
+		function calcularDescuento(pcio, descuento){
+			var restar = 	(pcio * descuento) / 100;
+			return (pcio-restar);
+		}
+
+	</script>
+
+</body>
+</html>

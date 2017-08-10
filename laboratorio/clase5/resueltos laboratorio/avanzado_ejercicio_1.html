@@ -1,0 +1,37 @@
+<body></body>
+<script>
+
+function verificarPassword(clave,form)
+{
+	if(clave.length >= 6 && isNaN(clave))
+	{
+		alert('Password correcto');
+		form.submit();
+	}
+	else
+	{
+		alert('Password incorrecto');
+		return false;
+	}
+}
+
+var f = document.createElement("form");
+f.setAttribute("method","post");
+f.setAttribute("action","submit_url.php");
+
+f.appendChild(document.createTextNode("Ingrese un password: ")); //crea la leyenda
+
+var password = document.createElement("input");
+password.setAttribute("type","password");
+password.setAttribute("name","pass");
+f.appendChild(password);
+
+var boton = document.createElement("input");
+boton.type = "button";
+boton.value = "Verificar password";
+boton.onclick = function () { verificarPassword(password.value,f) };
+
+f.appendChild(boton);
+document.body.appendChild(f);
+
+</script>

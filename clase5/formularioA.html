@@ -37,7 +37,7 @@ function validarDatos(f)
 	var pass1 = document.getElementById('pass1');
 	var pass2 = document.getElementById('pass2');
 	
-	if(pass1.value == '' || pass2.value == '')
+	if(pass1.value.length > 0 || pass2.value == '')
 	{
 		alert('Por favor, ingrese su password y re-confirme.');
 		pass1.focus();
